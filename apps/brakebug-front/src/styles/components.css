@@ -1,0 +1,37 @@
+/* ===== CARDS ===== */
+.card {
+  background-color: var(--sg-bg-surface);
+  /* border: 1px solid var(--sg-border); */
+  /* border-radius: var(--sg-radius-md); */
+  box-shadow: var(--sg-shadow-sm);
+  color: var(--sg-text-main);
+}
+
+.card-title {
+  color: var(--sg-text-muted);
+  font-size: .9rem;
+}
+
+/* ===== BOTÕES ===== */
+.btn-outline-primary {
+  color: var(--sg-primary);
+  /* border-color: var(--sg-primary); */
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--sg-primary);
+  color: #fff;
+}
+
+/* ===== TABELAS ===== */
+.table {
+  color: var(--sg-text-main);
+}
+
+.table thead {
+  background-color: var(--sg-bg-surface);
+}
+
+.table tbody tr:hover {
+  /* background-color: rgba(59,130,246,.08); */
+}

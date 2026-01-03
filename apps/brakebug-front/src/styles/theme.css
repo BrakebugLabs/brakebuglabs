@@ -1,0 +1,31 @@
+:root {
+  /* ===== CORES BASE ===== */
+  --sg-primary-color: #ff4d00;
+  --sg-bg-gradient-color: linear-gradient(135deg, #ff4d00, #ff961c, #fbd4b1, #ff961c, #ff4d00);
+  --sg-bg-invert-gradient-color: linear-gradient(135deg, #fbd4b1, #ff961c, #ff4d00);
+  --sg-light: #FFF;
+  --sg-dark: #101010;
+  --sg-gray: #393939;
+  --sg-gray-light: #ededed;
+
+  --sg-bg-main: #f1f1f1;
+  --sg-bg-surface: #ffffff;
+  /* --sg-bg-sidebar: #111827; */
+  --sg-bg-sidebar: #f87c47;
+
+  --sg-primary: #ffffff;
+  --sg-primary-hover: #f0f0f0;
+
+  --sg-text-main: #474747;
+  --sg-text-muted: #474747;
+
+  --sg-border: #1f2933;
+
+  /* ===== SHADOWS ===== */
+  --sg-shadow-sm: 0 1px 3px rgba(0, 0, 0, .4);
+  --sg-shadow-md: 0 8px 24px rgba(0, 0, 0, .5);
+
+  /* ===== RADIUS ===== */
+  --sg-radius-sm: 6px;
+  --sg-radius-md: 8px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biscoito Pet House - O Melhor para o seu Pet!</title>
+    <!-- <link rel="stylesheet" href="/apps/biscoito-site/assets/css/style.css"> -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-paw"></i> Biscoito Pet House
+                <p>by Brakebug Labs</p>
+            </div>
+            <nav>
+                <a href="#" onclick="loadPage('home')"><i class="fas fa-home"></i> Home</a>
+                <a href="#" onclick="loadPage('produtos')"><i class="fas fa-box-open"></i> Produtos</a>
+                <a href="#" onclick="loadPage('carrinho')"><i class="fas fa-shopping-cart"></i> Carrinho (<span
+                        id="cart-count">0</span>)</a>
+                <a href="#" onclick="loadPage('pagamentos')"><i class="fa-solid fa-credit-card"></i> Pagamento</a>
+                <a href="#" onclick="loadPage('login')" id="login-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+                <a href="#" onclick="logout()" id="logout-link" style="display: none;"><i
+                        class="fas fa-sign-out-alt"></i> Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="content" class="container">
+        <!-- Conteúdo dinâmico será carregado aqui -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Biscoito Pet House by Brakebug Labs. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Importação javascript -->
+
+    <script src="./app/utils.js"></script>
+    <script src="./app/login.js"></script>
+    <script src="./app/produtos.js"></script>
+    <script src="./app/carrinho.js"></script>
+    <script src="./app/finaliza_compra.js"></script>
+    <script src="./app/pagamentos.js"></script>
+    <script src="./assets/messages/messages.js"></script>
+    <script src="./app/pages.js"></script>
+    <script src="./app/app.js"></script>
+
+</body>
+
+</html>

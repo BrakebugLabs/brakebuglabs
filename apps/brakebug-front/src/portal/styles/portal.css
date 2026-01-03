@@ -1,0 +1,105 @@
+/* Estrutura geral */
+.content-wrapper-center {
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* Portal */
+.sm-12 {
+  grid-column: 1 / 13;
+}
+
+.portal-root .row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.bb-portal-main .template-bio {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-image: url('../../../public/assets/images/detetive-digital.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  width: 100vw;
+}
+
+.portal-header {
+  display: flex;
+  z-index: 10;
+  justify-content: space-between;
+  padding: 1.2rem 1.8rem;
+  align-items: center;
+  background: var(--gradient-color);
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.portal-header nav a {
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.portal-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--gray-light);
+  text-decoration: none;
+}
+
+.portal-header .user-info {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.portal-header .chevron {
+  transition: transform .18s ease;
+}
+
+.portal-header .chevron.open {
+  transform: rotate(180deg);
+  color: var(--dark);
+}
+
+
+/* Dropdown */
+.portal-header .user-dropdown {
+  position: relative;
+}
+
+.portal-header .dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 0;
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.12);
+  min-width: 220px;
+  z-index: 99999;
+  display: block;
+}
+
+.portal-header .dropdown-item {
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portal-header .dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}

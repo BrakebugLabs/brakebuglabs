@@ -1,0 +1,138 @@
+/* Hero */
+
+.bb-hero {
+  max-width: 100%;
+}
+
+.bb-hero .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -5rem;
+  
+}
+
+.content-title{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  flex-direction: column;
+  width: 90%;
+  /* border-radius: 8px; */
+}
+
+.container-hero-title{
+  background-color: rgba(1, 74, 151, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  box-shadow: 5px 5px 10px white, 5px 5px 10px rgb(221, 221, 221), 5px 5px 10px rgb(53, 53, 53) ;
+  border-radius: 4px;
+  text-align: center;
+  color: var(--light);
+}
+
+
+.content-title h2 span {
+  font-size: 2.5rem;
+  color: #212121;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  text-transform: uppercase;
+  /* text-shadow: 3px 3px 1px #0f0e0e, 5px 5px 10px #eeeded; */
+}
+
+.hero-content-title{
+  margin-top: 5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Cards */
+.portal-card {
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: #cccccc 2px solid;
+  box-shadow: -2px -3px 10px #cccccc, 1px 1px 10px rgb(124, 124, 124);
+  transition: transform 0.2s ease;
+  min-height: 25rem;
+}
+
+.portal-card:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+
+.portal-card-apps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.portal-card-game {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.bb-portal-grid .bb-apps-title,
+.bb-portal-game .bb-game-title {
+  background: var(--invert-gradient-color);
+  padding: 1.5rem;
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+  color: var(--dark);
+  margin-bottom: 0;
+}
+
+.bb-portal-game .bb-game-title {
+  margin-top: 2rem;
+}
+
+.grid-card-content {
+  background-color: var(--gray-light);
+  padding: 2.5rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+}
+
+.bb-game-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.bb-game-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: -2px -3px 10px #e0e0e0, 1px 1px 10px rgb(11, 122, 219);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 220px;
+}
+
+.bb-game-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ranking */
+.bb-game-btn.ranking {
+  background: linear-gradient(135deg, #7D4AFF, #4E2BD9);
+  color: #fff;
+}
+
+/* Gamificação */
+.bb-game-btn.gamification {
+  background: linear-gradient(135deg, #2ECC71, #1EAD5A);
+  color: #fff;
+}
+
+.bb-game-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: -2px -3px 10px #e0e0e0, 1px 1px 10px rgb(11, 122, 219);
+}

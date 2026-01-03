@@ -1,0 +1,105 @@
+# ================================
+# BACKEND - PYTHON / FASTAPI
+# ================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Configs e credenciais
+.env
+.envrc
+*.sqlite3
+*.db
+gerar_hash.py
+
+# Logs
+*.log
+logs/
+*.pid
+celerybeat-schedule
+
+# PyInstaller
+*.spec
+
+# Testes / Cobertura
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+.tox/
+.nox/
+cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# ================================
+# FRONTEND - REACT
+# ================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Build output
+dist/
+
+# Ambiente local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache do React
+.cache/
+*.tmp
+
+# ================================
+# SUPABASE
+# ================================
+.supabase/
+
+<<<<<<< HEAD
+# ================================
+# SISTEMA / DEPLOY
+# ================================
+.tmp/
+uploads/
+=======
+# PyPI configuration file
+.pypirc
+
+# Cursor
+.cursorignore
+.cursorindexingignore
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Arquivos específicos do projeto que não devem ir para o Git
+scripts/criar_admin.py
+scripts/check_admin_db.py
+app/gerar_hash.py
+create_admin.py
+create_user.py
+schema.sql
+

@@ -1,0 +1,73 @@
+@import './themes.css';
+
+.assure-testcase-form {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.assure-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assure-form-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.assure-form-card label {
+  font-weight: 500;
+}
+
+.assure-form-card input,
+.assure-form-card textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--input);
+}
+
+.assure-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.assure-status-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.assure-status-btn {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--secondary);
+  cursor: pointer;
+}
+
+.assure-status-btn.active {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.assure-import-box {
+  background: var(--muted);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.assure-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}

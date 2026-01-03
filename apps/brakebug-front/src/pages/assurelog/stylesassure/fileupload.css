@@ -1,0 +1,84 @@
+@import './themes.css';
+
+.assure-fileupload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.assure-dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  background: var(--card);
+}
+
+.assure-dropzone.active {
+  border-color: var(--primary);
+  background: var(--secondary);
+}
+
+.assure-dropzone p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.assure-dropzone span {
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+.assure-message {
+  padding: 0.6rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.assure-message.success {
+  background: rgba(0, 150, 137, 0.1);
+  color: rgb(0, 150, 137);
+}
+
+.assure-message.error {
+  background: rgba(231, 0, 11, 0.1);
+  color: rgb(231, 0, 11);
+}
+
+.assure-message.info {
+  background: var(--muted);
+}
+
+.assure-uploading {
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.assure-file-list {
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+}
+
+.assure-file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--muted);
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin-top: 0.4rem;
+}
+
+.assure-file-item span {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.assure-remove {
+  background: transparent;
+  border: none;
+  color: var(--destructive);
+  cursor: pointer;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,37 @@
+
+/* Footer */
+.login-footer {
+  width: 100%;
+  color: var(--gray-light);
+  background: var(--dark);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.login-footer-content {
+  width: 100%;
+  padding: 1rem;
+}
+
+.footer-by {
+  font-size: 1rem;
+  /* padding-bottom: 1rem; */
+}
+
+.portal-footer {
+  background: var(--gradient-color);
+  padding: 2rem 0;
+  margin-top: 4rem;
+  box-shadow: -2px -5px 10px #acacac;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: var(--light);
+}
+
+.footer-contact {
+  text-align: right;
+}

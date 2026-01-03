@@ -1,0 +1,12 @@
+@import './themes.css';
+
+.export-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.export-error {
+  font-size: 0.85rem;
+  color: var(--destructive);
+}
