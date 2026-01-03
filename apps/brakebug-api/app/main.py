@@ -6,6 +6,10 @@ from app.routers import clientes, compra_clientes, pagamentos
 from app.routers.auth_cliente import router as auth_cliente_router
 from app.routers.cliente_publico import router as cliente_publico_router
 
+from app.assurelog.routers.report_secure import router as report_router
+# from app.assurelog.routers.test_case import TestCase
+
+
 # IMPORTANTE: criação automática de tabelas
 from app.database import Base, engine
 
@@ -53,10 +57,16 @@ app.include_router(clientes.router, prefix="/api/clientes", tags=["Clientes"])
 app.include_router(compra_clientes.router, prefix="/api/compras", tags=["Compras"])
 app.include_router(cliente_publico_router, prefix="/api/public/clientes", tags=["CadastroCliente"])
 
-# 🔹 Rotas de pagamentos
+# Rotas de pagamentos
 app.include_router(pagamentos.router, prefix="/api/pagamentos", tags=["Pagamentos"])
 
-# 🔹 Rotas de teste e status
+# Rotas assurelog
+app.include_router(report_router, prefix="/api/reports", tags=["Reports"])
+# app.include_router(TestCase.router, prefix="/api/test_case", tags=["TestCase"])
+
+
+
+# Rotas de teste e status
 @app.get("/api/test")
 def test_api():
     return {"message": "✅ API funcionando corretamente!"}

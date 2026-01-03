@@ -13,7 +13,7 @@ from app.database import get_db
 from app.assurelog.models.report import Report
 from app.assurelog.models.test_case import TestCase
 from app.assurelog.auth.dependencies import get_current_user
-from app.assurelog.models.user import User
+# from app.assurelog.models.user import User
 
 router = APIRouter(prefix="/api/secure-reports", tags=["PDF"])
 

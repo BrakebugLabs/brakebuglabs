@@ -10,26 +10,29 @@ from app.assurelog.schemas.test_case import TestCaseSchema
 # =========================================================
 
 class ReportBase(BaseModel):
-    title: str = Field(..., example="Relatório de Testes - Login")
+    title: str = Field(
+        ...,
+        examples=["Relatório de Testes - Login"]
+    )
     date: Optional[date] = Field(
-        default_factory=date.today,
-        example="2024-01-15"
+        default=None,
+        examples=["2024-01-15"]
     )
     made_by: Optional[str] = Field(
-        None,
-        example="qa.user"
+        default=None,
+        examples=["qa.user"]
     )
     test_environment: Optional[str] = Field(
-        None,
-        example="Homologação"
+        default=None,
+        examples=["Homologação"]
     )
     link: Optional[str] = Field(
-        None,
-        example="https://jira.exemplo.com/TEST-123"
+        default=None,
+        examples=["https://jira.exemplo.com/TEST-123"]
     )
     feature_scenario: Optional[str] = Field(
-        None,
-        example="Feature Login - Cenário de Autenticação"
+        default=None,
+        examples=["Feature Login - Cenário de Autenticação"]
     )
 
 
@@ -63,10 +66,10 @@ class ReportSchema(ReportBase):
     user_id: int
 
     created_at: datetime
-    updated_at: Optional[datetime]
+    updated_at: Optional[datetime] = None
 
-    # test_cases: List[TestCaseSchema] = []
     test_cases: List[TestCaseSchema] = Field(default_factory=list)
 
-    class Config:
-        from_attributes = True
+    model_config = {
+        "from_attributes": True
+    }

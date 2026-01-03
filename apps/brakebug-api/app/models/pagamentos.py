@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Float, Enum
 from sqlalchemy.orm import relationship
 from datetime import datetime
+
 from app.database import Base
 
 class Pagamento(Base):

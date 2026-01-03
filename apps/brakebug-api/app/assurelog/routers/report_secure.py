@@ -5,8 +5,9 @@ from datetime import datetime
 from typing import Optional
 
 from app.database import get_db
-from app.assurelog.models.report import Report, TestCase
-from app.assurelog.models.user import User
+from app.assurelog.models.report import Report
+from app.assurelog.models.test_case import TestCase
+# from app.assurelog.models.user import User
 from app.services.auth import get_current_user
 from app.assurelog.schemas.report import (
     ReportCreate,
@@ -116,6 +117,40 @@ def get_reports(
     } 
 
 
+# @router.post(
+#     "/",
+#     response_model=ReportSchema,
+#     status_code=status.HTTP_201_CREATED
+# )
+# def create_report(
+#     report_in: ReportCreate,
+#     current_user: User = Depends(get_current_user),
+#     db: Session = Depends(get_db)
+# ):
+#     """
+#     Criar novo relatório
+#     """
+#     if not report_in.title:
+#         raise HTTPException(
+#             status_code=400,
+#             detail="Título é obrigatório"
+#         )
+
+#     report = Report(
+#         title=report_in.title,
+#         date=report_in.date or datetime.utcnow().date(),
+#         made_by=report_in.made_by or current_user.username,
+#         test_environment=report_in.test_environment or "",
+#         link=report_in.link or "",
+#         feature_scenario=report_in.feature_scenario or "",
+#         user_id=current_user.id
+#     )
+
+#     db.add(report)
+#     db.commit()
+#     db.refresh(report)
+#     return report
+
 @router.post(
     "/",
     response_model=ReportSchema,
@@ -129,25 +164,30 @@ def create_report(
     """
     Criar novo relatório
     """
+
     if not report_in.title:
         raise HTTPException(
-            status_code=400,
+            status_code=status.HTTP_400_BAD_REQUEST,
             detail="Título é obrigatório"
         )
 
-    report = Report(
-        title=report_in.title,
-        date=report_in.date or datetime.utcnow().date(),
-        made_by=report_in.made_by or current_user.username,
-        test_environment=report_in.test_environment or "",
-        link=report_in.link or "",
-        feature_scenario=report_in.feature_scenario or "",
-        user_id=current_user.id
-    )
+    # Converte schema para dict (compatível com Pydantic v2)
+    data = report_in.model_dump()
+
+    # Defaults explícitos (regra de negócio)
+    data["date"] = data.get("date") or date.today()
+    data["made_by"] = data.get("made_by") or current_user.username
+    data["test_environment"] = data.get("test_environment") or ""
+    data["link"] = data.get("link") or ""
+    data["feature_scenario"] = data.get("feature_scenario") or ""
+    data["user_id"] = current_user.id
+
+    report = Report(**data)
 
     db.add(report)
     db.commit()
     db.refresh(report)
+
     return report
 
 
