@@ -32,3 +32,6 @@ class Report(Base):
         cascade="all, delete-orphan"
     )
 
+    user = relationship("User", back_populates="reports")
+    # test_cases = relationship("TestCase", back_populates="report", cascade="all, delete-orphan")
+

@@ -26,7 +26,7 @@ function AuthenticatedApp() {
 
   const [user, setUser] = useState(null);
   useEffect(() => {
-    apiService.request('/me')
+    apiService.request('/auth/me')
       .then(setUser)
       .catch(() => setUser(null));
   }, []);

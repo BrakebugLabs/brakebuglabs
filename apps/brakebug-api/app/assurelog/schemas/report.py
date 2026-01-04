@@ -1,9 +1,9 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
-from datetime import date, datetime
+from datetime import date as dt_date
 
+# Certifique-se que este import não causa referência circular
 from app.assurelog.schemas.test_case import TestCaseSchema
-
 
 # =========================================================
 # BASE
@@ -11,38 +11,37 @@ from app.assurelog.schemas.test_case import TestCaseSchema
 
 class ReportBase(BaseModel):
     title: str = Field(
-        ...,
+        ..., 
         examples=["Relatório de Testes - Login"]
     )
-    date: Optional[date] = Field(
-        default=None,
-        examples=["2024-01-15"]
+    # Mudança sugerida: Use Union ou garanta que o tipo esteja claro para o Pydantic
+    date: dt_date = Field(
+        default_factory=dt_date.today, 
+        examples=[dt_date.today()] 
     )
     made_by: Optional[str] = Field(
-        default=None,
+        default=None, 
         examples=["qa.user"]
     )
     test_environment: Optional[str] = Field(
-        default=None,
+        default=None, 
         examples=["Homologação"]
     )
     link: Optional[str] = Field(
-        default=None,
+        default=None, 
         examples=["https://jira.exemplo.com/TEST-123"]
     )
     feature_scenario: Optional[str] = Field(
-        default=None,
+        default=None, 
         examples=["Feature Login - Cenário de Autenticação"]
     )
-
 
 # =========================================================
 # CREATE
 # =========================================================
 
 class ReportCreate(ReportBase):
-    title: str
-
+    pass  # Não precisa redeclarar title: str se já está na Base
 
 # =========================================================
 # UPDATE
@@ -56,7 +55,6 @@ class ReportUpdate(BaseModel):
     link: Optional[str] = None
     feature_scenario: Optional[str] = None
 
-
 # =========================================================
 # RESPONSE
 # =========================================================
@@ -64,12 +62,15 @@ class ReportUpdate(BaseModel):
 class ReportSchema(ReportBase):
     id: int
     user_id: int
+    created_at: dt_date
+    updated_at: Optional[dt_date] = None
 
-    created_at: datetime
-    updated_at: Optional[datetime] = None
+    # Se TestCaseSchema causar erro de recursão, use strings para anotação
+    test_cases: List["TestCaseSchema"] = [] 
+    # test_cases: List["TestCaseSchema"] = Field(default_factory=list) 
 
-    test_cases: List[TestCaseSchema] = Field(default_factory=list)
-
-    model_config = {
-        "from_attributes": True
-    }
+    # No Pydantic V2, a forma recomendada é usar ConfigDict
+    model_config = ConfigDict(
+        from_attributes=True,
+        arbitrary_types_allowed=True  # Isso resolve o erro de compatibilidade de tipos desconhecidos
+    )

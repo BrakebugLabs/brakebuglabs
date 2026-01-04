@@ -1,5 +1,4 @@
-// const API_BASE_URL = 'http://localhost:8000/reports';
-const API_BASE_URL = `${process.env.REACT_APP_ASSURELOG_API}`;
+const API_BASE_URL = "http://localhost:8000/api";
 
 // const API_BASE_URL =
 //     ['localhost', '127.0.0.1'].includes(window.location.hostname)

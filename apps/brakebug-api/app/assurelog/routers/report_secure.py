@@ -7,7 +7,7 @@ from typing import Optional
 from app.database import get_db
 from app.assurelog.models.report import Report
 from app.assurelog.models.test_case import TestCase
-# from app.assurelog.models.user import User
+from app.assurelog.models.user import User
 from app.services.auth import get_current_user
 from app.assurelog.schemas.report import (
     ReportCreate,

@@ -10,7 +10,7 @@ from werkzeug.utils import secure_filename
 
 from app.database import get_db
 from app.assurelog.models.test_case import TestCase
-# from app.assurelog.models.user import User
+from app.assurelog.models.user import User
 from app.services.auth import get_current_user
 
 router = APIRouter(

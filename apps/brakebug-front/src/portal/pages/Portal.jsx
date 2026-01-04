@@ -78,7 +78,7 @@ const Portal = () => {
             <div className='content-title'>
               <header>
                 <div className='container-hero-title'>
-                  <h2 spanclassName="hero-title"><span>Pratique como um verdadeiro QA</span></h2>
+                  <h2 className="hero-title"><span>Pratique como um verdadeiro QA</span></h2>
                 </div>
                 <div className='hero-content-title'>
                   <p>✓ Teste</p>

@@ -7,6 +7,7 @@ from app.schemas.usuario import Token
 from app.config import settings
 from app.database import get_db
 from app.models.usuario import Usuario
+from app.assurelog.models.user import User
 from app.utils.security import verify_password
 
 # Configuração do OAuth2
